@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-crud-7fc4f": {
+      "hosting": {
+        "fireBaseCrud": [
+          "fir-crud-7fc4f"
+        ]
+      }
+    }
+  }
+}

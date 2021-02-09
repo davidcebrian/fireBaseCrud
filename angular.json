@@ -30,7 +30,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,9 +124,16 @@
               "devServerTarget": "fireBaseCrud:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "fireBaseCrud"
+  "defaultProject": "fireBaseCrud",
+  "cli": {
+    "analytics": "4b1749db-4b80-4d29-a2d2-dccb50c98aa8"
+  }
 }
