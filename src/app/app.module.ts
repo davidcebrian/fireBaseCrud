@@ -8,7 +8,11 @@ import { HeaderModule } from './components/header/header.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+
 import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

@@ -9,17 +9,36 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table-dark" *ngFor="let item of [0,1,2,3]">
-                <th scope="row">Antonio</th>
-                <td>toño</td>
-                <td>toni@ton</td>
+            <tr class="table-dark" *ngFor="let user of usuarios">
+                <th scope="row">{{ user.data.nombre }}</th>
+                <td> {{ user.data.nickname }} </td>
+                <td> {{ user.data.email }} </td>
                 <td class="btn-group" role="group">
-                    <button type="button" class="btn btn-outline-primary m-1" (click)="verDetalles(item)">Details</button>
-                    <button type="button" class="btn btn-outline-success m-1" >Edit</button>
-                    <button type="button" class="btn btn-outline-danger m-1" (click)="borrarUsuario(item)">Delete</button>
+                    <button type="button" class="btn btn-outline-success m-1" (click)="editar(user.data.nombre)" >Edit</button>
+                    <button type="button" class="btn btn-outline-danger m-1" (click)="deleteUser(user.data.nombre)">Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<br><br>
+<h4>FORMULARIO</h4>
+<form [formGroup]="userForm">
+    <div class="form-group">
+        
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Introduzca nombre">
+    
+        <label for="nickname">Nickname:</label>
+        <input type="text" formControlName="nickname" class="form-control" id="nickname" placeholder="Introduzca nickname">
+        
+        <label for="email">email</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Introduzca email">
+        
+        <button type="button" class="btn btn-outline-warning mt-3" (click)="newUser()">Enviar</button>
+
+    </div>
+</form>
+
     
